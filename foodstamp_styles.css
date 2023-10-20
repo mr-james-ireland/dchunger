@@ -1,0 +1,171 @@
+body {
+	font-family: Georgia, Times, serif;
+	/*line-height: 0px;*/
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size: 62.5%;
+	background-color: #fff;
+}
+
+#back {
+	width: 1008px;
+	background-image: url(images/bg.jpg);
+	background-repeat: repeat-y;
+	margin: 0px auto 0px auto;
+}
+
+#page {
+	margin: 5px auto 0px auto;
+	text-align: left;
+	width: 900px;
+	position: relative;
+	background-color: #fff;
+}
+
+a img {
+	border: 0px;
+}
+
+
+/* !header */
+
+#header {
+	position: relative;
+}
+
+/* !middle */
+
+div#bottom {
+	position: relative;
+	width: 100%;
+}
+
+/* !left column */
+
+#left {
+	background-color: #fff;
+	width: 175px;
+	float: left;
+	position: relative;
+}
+
+#navigation {
+	margin-top: 0px;
+	border-right: 1px solid #95a026;
+	padding: 20px 15px 10px 15px;
+	width: 144px;
+	position: relative;
+}
+
+#navigation h3 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 1.2em;
+	color: #95a026;
+	margin: 20px 0px 5px 0px;
+	line-height: 130%;
+	padding-top: 15px;
+	border-top: 1px solid #95a026;
+}
+
+#navigation h3.first {
+	border-top: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+#navigation h4 {
+	font-weight: 100;
+	color: #95a026;
+	line-height: 120%;
+	margin: 0px;
+	width: 100%;
+	position: relative;
+	font-size: 1.4em;
+}
+
+#navigation h4 a {
+	text-decoration: none;
+	color: #5a4c83;
+	display: block;
+	margin: 0px -15px 0px -15px;
+	padding: 3px 15px 3px 15px;
+	position: relative;
+	width: 100%;
+}
+
+#navigation h4 a:hover {
+	background-color: #5d4f89;
+	color: #fff;
+}
+
+#footer {
+    background-color: #FFFFFF;
+    background-image: url("http://www.dchunger.org/images/stripes.gif");
+    clear: both;
+    height: 30px;
+    width: 100%;
+}
+
+.hasfootnote {
+	color: red;
+	cursor: help;
+	text-decoration: underline;
+}
+
+
+.hasreport {
+	color: red;
+	cursor: help;
+	text-decoration: underline;
+}
+
+.eligibilityresult {
+	color: #28065A
+}
+
+
+
+.importantNotice {
+	padding: 10px 10px 10px 10px; 
+	background-color: #ecf0c6; 
+	margin: 10px 10px 10px 10px;
+	
+}
+
+.importantTitle {
+  display:block;
+  position: relative;
+  margin:0;   
+  border:1px solid #E0E0E0;
+  padding:5px;   
+  font: bold 16px Georgia, Times, serif; 
+  color:#5A5655;   
+  background-color:#C4CB23;
+  clear:both;
+  text-align:left; 
+  z-index:88;
+  -webkit-border-radius: 5px;
+  -moz-border-radius  : 5px;    
+}
+
+.icon {
+  vertical-align: -3px;	
+}
+
+#welcome p a {
+	color: #0000EE;  
+}
+
+#welcome p a:visited {
+	color: #A8508B;
+}
+
+.calccell {
+	text-align: right;
+}
+.sumcell {
+	text-align: right;
+	border-top-style: solid;
+}
