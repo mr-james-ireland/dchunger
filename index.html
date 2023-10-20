@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- LAST VERSION: 2013.11.07 - jireland@alternateallele.com -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>DC Hunger Solutions: Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="" />
+<meta name="Description" content="" />
+<!--<link rel="stylesheet" type="text/css" href="/print.css" media="print" />-->
+<link rel="stylesheet" type="text/css" href="foodstamp_styles.css" media="screen" /> 
+<link href="SmartWizard-2.0/styles/smart_wizard_vertical.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="./jquery-ui-1.8.16.custom/css/ui-lightness/jquery-ui-1.8.16.custom.css" media="screen"/> 
+
+
+<!--<script type="text/JavaScript" src="/external.js"></script>-->
+
+<!--  Spreadsheet Javascript -->
+<!--<script src="http://code.jquery.com/jquery-latest.min.js" type=""></script>-->
+<script src="./jquery-1.7.2.min.js" type=""></script>
+<script src="./jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min.js" type=""></script>
+</head>
+<body id="front" onload="update_total_gross_income()">
+
+<div id="back">
+
+<div id="page">
+<div id="header"><a href="http://www.dchunger.org/" title="to front of site"><img
+	src="http://www.dchunger.org/images/logo2.jpg" alt="DC Hunger Solutions" /></a><img
+	src="http://www.dchunger.org/images/backer.jpg" alt="*" /></div> 
+<div id="bottom">
+
+
+<div id="content"><!-- START OF CALC --> <!--   <script src="javascripts/scriptaculous.js" type="text/javascript"></script> -->
+<script type="text/javascript"
+	src="SmartWizard-2.0/js/jquery.smartWizard-2.0.min.js"></script>
+<script src="foodstampcalc_data.js" type="text/Javascript"></script>
+<script src="foodstampcalc.js" type="text/Javascript"></script>
+
+<div id="periodcalc" title="Calculator"  style="display: none"></div> 
+<div id="welcome" title="Welcome" style="display: none">
+<p>
+Welcome to DC Hunger Solutions' SNAP/Food Stamp Calculator. Answer the questions that follow to find out if you can get food stamp benefits, and if so, an estimate of how much. It is completely confidential because you will not give us your name, address, or any information that tells us who you are.   This tool will ask you about your income from jobs and other sources, your housing expenses such as rent and utilities, and any childcare or child support expenses you have.
+</p>
+<p>
+This tool is not an official application. However, it will give you a good idea of the kinds of questions you will have to answer when you apply.
+</p>
+<p>
+NOTE: This tool is for DC residents only.  MD Residents should contact <a href="http://www.mdhungersolutions.org/index.shtml">Maryland Hunger Solutions</a> for information about SNAP/food stamps in MD.
+</p></div>
+
+
+<form id="hungerform" action="">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td><!-- Tabs -->
+			<div id="wizard" class="swMain">
+				<ul>
+					<li><a href="#step-1"> <label class="stepNumber">1</label> <span
+						class="stepDesc">Household<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-2"> <label class="stepNumber">2</label> <span
+						class="stepDesc">Income<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-3"> <label class="stepNumber">3</label> <span
+						class="stepDesc">Medical Deductions<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-4"> <label class="stepNumber">4</label> <span
+						class="stepDesc">Dependent Care<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-5"> <label class="stepNumber">5</label> <span
+						class="stepDesc">Child Support<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-6"> <label class="stepNumber">6</label> <span
+						class="stepDesc">Housing and Utilities<br />
+					<small></small> </span> </a></li>
+					<li><a href="#step-7"> <label class="stepNumber">7</label> <span
+						class="stepDesc">Benefits<br />
+					<small></small> </span> </a></li>
+				</ul>
+			
+				<!--  HOUSEHOLD SIZE -->		
+				<div id="step-1">
+					<h2 class="StepTitle">Step 1: Household Size and Composition</h2>
+					
+					<div class="importantNotice">
+					    <p><strong>Important Note for Immigrants</strong></p>
+						<p>You can apply and get SNAP/food stamps for eligible family members, even if your family includes other
+						   members who are not eligible because of immigration status.  For example, immigrant parents may apply for SNAP/
+						   food stamps for their U.S. citizen or qualified immigrant children, even though the parents may not be eligible
+						   for benefits.</p>
+						<p>For more information, including a list of immigrant statuses that may qualify someone for benefits, click <a href="http://dchunger.org/pdf/immigrants_foodstamps_flyer.pdf">here</a>.</p>
+					</div>
+					
+					<div id="question">
+						<p>How many people total live in <span id="footnote1" class="hasfootnote">your household</span> (include all members who buy and prepare food together)? 
+						
+						<select id="q_people_in_household" onchange='update_household_members(); update_total_gross_income()'>
+							<option value="0">select one</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+						</select>
+						
+						</p>
+					</div>
+					
+					<div id="household_members"></div>
+					
+					<div id="question">
+						<p>Are ALL members of the household receiving <span id="footnote2" class="hasfootnote">SSI</span> or <span id="footnote3" class="hasfootnote">TANF</span>
+						benefits? <select id="q_ssi_benefits"
+							onchange='update_total_gross_income()'>
+							<option value="Y">Yes</option>
+							<option value="N" selected>No</option>
+						</select></p>
+					</div>
+					
+					
+				</div>
+	
+				<!--  MONTHLY INCOME -->
+				<div id="step-2">
+					<h2 class="StepTitle">Step 2: Your Monthly Income</h2>
+		
+					<p><strong>Earned Income - Total gross  <span id="footnote4" class="hasfootnote">monthly earned income</span> (before taxes):</strong></p>
+
+					
+						<table class="member_section">
+							
+							<tr style="display: none"><td><strong>MBRNAME's</strong>
+								monthly earned income: </td><td> <input type="text"
+								id="monthly_earned_income_MBRCNT" size="15" class="freqcalc"
+								onchange='update_total_gross_income()' /> </td>
+								
+								<td style="padding-top:6px;"><img title="Help me calculate" src="./calc_small.png" onclick="period_calculator('monthly_earned_income_MBRCNT','Earned Income for MBRNAME',['Source 1','Source 2','Source 3','Source 4','Source 5'], 'How often do you <br/>receive this income?', '')" ></img>
+								</td>
+							</tr>
+							
+						</table>
+					
+
+					<p><strong>Unearned Income - Total gross monthly  <span id="footnote5" class="hasfootnote">unearned income</span>:</strong></p>
+			
+						<table class="member_section">
+							
+							<tr style="display: none"><td><strong>MBRNAME's</strong>
+								monthly unearned income: </td><td> <input type="text"
+								id="monthly_unearned_income_MBRCNT" size="15" class="freqcalc"
+								onchange='update_total_gross_income()' /> </td>
+								
+								<td style="padding-top:6px;"><img title="Help me calculate" src="./calc_small.png" onclick="period_calculator('monthly_unearned_income_MBRCNT','Unearned Income for MBRNAME',['Source 1','Source 2','Source 3','Source 4','Source 5'], 'How often do you <br/>receive this income?', '')" ></img>
+								</td>
+							</tr>
+							
+						</table>
+			
+				</div>
+					
+					
+					
+				
+				<!-- DEDUCTIONS -->
+				<div id="step-3">
+					<h2 class="StepTitle">Step 3: Deduction for Medical Expenses</h2>
+		
+					<div class="importantNotice">
+						<p>
+											Note: Medical expenses for elderly or disabled persons can be deducted from your household income, if the out-of-pocket costs are over $35/month and if you provide receipts or other proof of payment to ESA.  
+						
+						</p>
+					
+					</div>
+		
+					<div id="question">
+						<p>Is there an elderly (60+) or disabled person in the household?
+						<select id="medical_status" class="hashidden" onchange='update_total_gross_income()'>
+							<option value="N" selected="selected">No</option>
+							<option value="Y">Yes</option>
+						</select>
+						</p>
+					</div>
+					
+					
+					<div id="medical_status" style="display: none">					
+						<div id="question">
+						    <p>What is the amount of monthly <span id="footnote7" class="hasfootnote">medical expenses</span> for the elderly/disabled household members<br/>that is paid out-of-pocket? <input type="text" id="monthly_medical_bills" size="15" class="freqcalc" onchange='update_total_gross_income()'> <img align="bottom" class="icon" title="Help me calculate" src="./calc_small.png" onclick="period_calculator('monthly_medical_bills','Monthly Medical Bills',['Expense 1','Expense 2','Expense 3','Expense 4','Expense 5'], 'How often do you pay?', '')" ></img>
+							</p>
+						</div>
+				
+							
+					</div> <!-- medical status -->
+				
+					</p>
+		
+				</div> <!-- step 3 -->
+				
+				<!--  DEPENDENT CARE -->
+				<div id="step-4">
+					<h2 class="StepTitle">Step 4: Deduction for Dependent Care Expenses</h2>
+				
+					<div id="question">
+						<p>Does someone in your household pay for childcare/babysitting/day care for any dependents or care for an incapacitated adult
+						in order to work, receive work training, or attend school? <select
+							id="dependent_status" class="hashidden">
+							<option value="Y">Yes</option>
+							<option value="N" selected="selected">No</option>
+						</select></p>
+					</div>
+					<div id="dependent_status" style="display: none">						
+						<table class="member_section">							
+							<tr style="display: none"><td>Monthly childcare expenses paid by <strong>MBRNAME</strong>:
+								</td><td> <input type="text"
+								id="dep_monthly_MBRCNT" size="15" class="freqcalc"
+								onchange='update_total_gross_income()' /> </td>
+								
+								<td style="padding-top:6px;"><img title="Help me calculate" src="./calc_small.png" onclick="period_calculator('dep_monthly_MBRCNT','Dependent Costs for MBRNAME',['Dependent #1','Dependent #2','Dependent #3','Dependent #4','Dependent #5-7'], 'How often?', '')" ></img>
+								</td>
+							</tr>							
+						</table>
+					</div>
+						
+				</div> <!--  step 4 -->
+				
+				<!--  CHILD SUPPORT -->
+				<div id="step-5">
+					<h2 class="StepTitle">Step 5: Deduction for Child Support Payments</h2>
+				
+					<div id="question">
+						<p>Does someone in your household pay any legally-obligated child support? <select
+							id="child_support_status" class="hashidden">
+							<option value="Y">Yes</option>
+							<option value="N" selected="selected">No</option>
+						</select></p>
+					</div>
+					
+					<div id="child_support_status" style="display: none">
+					
+						<table class="member_section">							
+							<tr style="display: none"><td>Monthly child support paid by <strong>MBRNAME</strong>:
+								</td><td> <input type="text"
+								id="child_support_MBRCNT" size="15" class="freqcalc"
+								onchange='update_total_gross_income()' /> </td>
+								
+								<td style="padding-top:6px;"><img title="Help me calculate" src="./calc_small.png" onclick="period_calculator('child_support_MBRCNT','Child Support Costs for MBRNAME',[''], 'How often?', '')" ></img>
+								</td>
+							</tr>							
+						</table>
+						
+					</div>
+					
+				</div> <!--  step 5 -->
+				
+				<div id="step-6">
+					<h2 class="StepTitle">Step 6: Deduction for Housing and Utility Cost</h2>
+				 
+				    <p><strong><span id="footnote8" class="hasfootnote">Shelter Costs</span>:</strong></p>
+				
+					<div id="question">
+						<table class="member_section">							
+							<tr style="display: none"><td>Monthly shelter costs paid by <strong>MBRNAME</strong>:
+								</td><td> <input type="text"
+								id="shelter_cost_MBRCNT" size="15" class="freqcalc"
+								onchange='update_total_gross_income()' /> </td>
+								
+								<td style="padding-top:6px;"><img title="Help me calculate" src="./calc_small.png" onclick="period_calculator('shelter_cost_MBRCNT','Shelter Costs for MBRNAME',['Rent or<br/>Mortgage','Home<br/>Insurance','Property<br/>Tax'], 'How often?', '')" ></img>
+								</td>
+							</tr>							
+						</table>
+					</div>
+				
+					<br/>
+					<p><strong>Utility Costs:</strong></p>
+					<div id="question">
+						Check the first that applies:
+						<p><input type="radio" id="q_utilities" name="utilities"
+							value="heat" onchange='update_total_gross_income()'  checked="checked" />The household is
+						responsible for paying heat/cooling, or gets LIHEAP <br />
+						<input type="radio" id="q_utilities" name="utilities"
+							value="two_utilities" onchange='update_total_gross_income()' />The
+						household doesn't pay heat/cooling but pays at least two other utilities
+						<br />
+						<input type="radio" id="q_utilities" name="utilities"
+							value="one_utility" onchange='update_total_gross_income()' />The
+						household pays only one utility and it isn't phone <br />
+						<input type="radio" id="q_utilities" name="utilities" value="phone"
+							onchange='update_total_gross_income()' />The only utility the
+						household pays is phone (cell and/or land line)<br />
+						<input type="radio" id="q_utilities" name="utilities" value="none"
+							onchange='update_total_gross_income()'/>The
+						household doesn't pay any utilities<br />
+						</p>
+					</div>
+				</div> <!-- Step 6 -->
+
+				<!--  BENEFITS -->
+				<div id="step-7">
+					<h2 class="StepTitle">Step 7: Benefits</h2>
+					
+					
+					<div id="is_eligible" style="display: none">
+					<h3 class="eligibilityresult">You are likely eligible for SNAP (<span id="calc_details" class="hasreport">details</span>)</h3>
+					<p>
+					
+					<b>Your benefit should be around $<span id="your_benefit">0</span><span id="below_min_fn" style="display: none"><sup>*</sup></span></b>
+					</p>
+					
+					<p>
+					<b>Apply for SNAP/Food Stamps as Soon As Possible!</b>
+					
+					<ul>
+						<li>Download a <span><a href="http://dhs.dc.gov/service/apply-benefits" target="blank">SNAP/Food Stamp application</a></span>.</li>
+						<li>Call (202) 698-3900 to find out at which <span><a href="http://dhs.dc.gov/service/find-service-center-near-you" target="blank">service center</a></span> you should apply.</li>
+						<li>Read the <span><a href="http://dchunger.org/pdf/getfood_dc.pdf#page=6" target="blank">SNAP/Food Stamp section</a> of our guide <a href="http://dchunger.org/pdf/getfood_dc.pdf">"How to Get Food in the District of Columbia"</a></span> to learn about the application process.</li>
+						<li>Call D.C. Hunger Solutions at (202) 986-2200 for application assistance.</li>
+						<li>Check out the <span><a href="http://dcfoodfinder.org/" target="blank">D.C. Food Finder</a></span> for additional food resources.</li>
+			
+					</ul>
+					
+					</p>
+					
+					</div>
+					
+					<div id="is_not_eligible" style="display: none">
+					<h3 class="eligibilityresult">You are not likely to be eligible for SNAP (<span id="calc_details" class="hasfootnote">details</span>)</h3>
+					<p>
+					Discover Other Food Resources in the District of Columbia
+					<ul>
+						<li>Read <span><a href="http://dchunger.org/pdf/getfood_dc.pdf" target="blank">"How to Get Food in the District of Columbia"</a></span> to learn about all available food programs in the District.
+						<li>Check out the <span><a href="http://dcfoodfinder.org/" target="blank">D.C. Food Finder</a></span> for additional food resources.</li>
+						<li>Call D.C. Hunger Solutions at (202) 986-2200 for additional information and assistance</li>
+					</ul>	
+					</p>
+					</div>
+					<p>
+						<button onClick="window.location.href=DC_HUNGER_CALC_URL;">Start Over</button>
+					</p>
+					<p>
+					<div class="importantNotice">
+					<h2 class="importantTitle">Important Information</h2>
+					<div id="below_min" style="display: none">
+					<p><i><sup>*</sup>Thanks to the SNAP Expansion Act of 2014, no household should be getting less than $30 a month in SNAP benefits! If you get less than $30 a month in benefits, be on the lookout for additional benefits on your EBT card.</i></p>
+					</div>
+					<p><i>These results are only an ESTIMATE based on the information you submitted. You may get more or less food stamp benefits than the estimate shows. If these results say you are NOT eligible for food stamps, you MAY STILL be eligible. The only way you can know officially if you are eligible for food stamps is to submit an application to the D.C. Department of Human Services' Economic Security Administration (ESA).
+					</i></p>
+					<p><i>Normally, the ESA has 30 days to determine eligibility for food stamps. However, some people may qualify for emergency food stamps, known as expedited food stamps, and can receive benefits in less than 7 days. If you have less than $150 in gross monthly income and less than $100 in resources, or if your shelter costs are higher than your gross monthly income, you could be eligible for emergency food stamps. Call (202) 698-3900 to find your ESA service office and apply.
+					</i></p>
+					<p><i>Keep in mind that some people are not able to get food stamp benefits, including some people on strike, some non-citizens, and some college students. In most cases, their children and other people in the home may still be able to get benefits.
+					</i></p>
+					<p><i>Contact D.C. Hunger Solutions at: <a href="mailto:info@dchunger.org">info@dchunger.org</a> or call us at 202.986.2200 x 3042 for additional information or help applying. 
+					</i></p>
+					
+					</div>
+					</p>
+				</div> <!-- step 7 -->
+															
+				
+			</div> <!--  wizard div -->	
+			<div id="footnote1" title="Your Household" style="display: none;" class="footnote">
+				<p>For the purposes of applying for SNAP, your household is the number of people who
+					<ol> 
+				    	<li>live together</li>
+				    	<li> buy and prepare food together</li>
+				    </ol>
+				    Married couples living 
+				    together must always be considered as part of the same household, and individuals
+				    age 21 or younger living with their parents must always be considered as in the same
+				    household as their parents.
+				</p>			
+			</div>
+			<div id="footnote2" title="SSI" style="display: none;" class="footnote">
+				<p>Supplemental Security Income
+				</p>			
+			</div>
+			<div id="footnote3" title="TANF" style="display: none;" class="footnote">
+				<p>Temporary Assistance for Needy Families (TANF)
+				</p>			
+			</div>
+			<div id="footnote4" title="Monthly Earned Income" style="display: none;" class="footnote">
+				<p>Any earned (from work - salary, wages or tips) income received by any member of the household, before taxes.
+				</p>			
+			</div>
+			<div id="footnote5" title="Monthly Unearned Income" style="display: none;" class="footnote">
+				<p>Any unearned (not from work) income received by any member of the household before taxes.  For example:
+				<ul>
+					<li>SSI</li>
+					<li>social security</li>
+					<li>veterans benefits</li>
+					<li>unemployment/workers compensation</li>
+					<li>retirement and pensions</li>
+					<li>foster care/adoption subsidy</li>
+					<li>child support</li>
+					<li>help with expenses</li>
+					<li>other</li>
+				</ul>
+
+				</p>			
+			</div>
+			<div id="footnote6" title="TANF" style="display: none;" class="footnote">
+				<p>Temporary assistance for needy families
+				</p>			
+			</div>
+			<div id="footnote7" title="Medical Bills" style="display: none;" class="footnote">
+				<p>
+				<ul>
+					<li>doctor or dentist visits</li>
+					<li>hearing aids, eyeglasses or other durable medical supplies</li>
+					<li>medicines prescribed by a doctor</li>
+					<li>hospital visits</li>
+					<li>health insurance premiums, fees, co-payments, deductibles and other payments</li>
+					<li>transportation to medical appointments</li>
+				</ul>
+				</p>			
+			</div>
+			
+			<div id="footnote8" title="Shelter Expenses" style="display: none;" class="footnote">
+				<p>
+			Shelter expenses can include the cost of monthly rent/mortgage, home insurance, or property taxes.
+				</p>
+			</div>
+			
+			<div id="exit_confirm" title="Confirm Exit" style="display: none;" class="footnote">
+				Are you sure you want to exit? None of your changes will be saved.
+			</div>
+			
+			<div id="calc_details" title="Calculation Summary" style="display: none;" class="report">
+				<p>
+				<table>
+				<tr>
+					<th colspan="2">Household Size and Composition</th>
+				</tr>
+				<tr>
+					<td class="calccell">Eligible Members (<i>EM</i>)</td>
+					<td class="calccell"><div id="report_eligible_members"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Ineligible Members</td>
+					<td class="calccell"><div id="report_ineligible_members"></div></td>
+				</tr>
+				<tr>
+					<td class="sumcell">Household Size (<i>HS</i>)</td>
+					<td class="sumcell"><div id="report_household_size"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<td class="calccell">Elig. Weighting (<i>EW</i>) = <i>EM/HS</i></td>
+					<td class="calccell"><div id="report_household_weight"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				
+				<tr>
+					<th colspan="2">Household Income</th>
+				</tr>
+				<tr>
+					<td class="calccell">Earned Income</td>
+					<td class="calccell"><div id="report_earned_income"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Unearned Income</td>
+					<td class="calccell"><div id="report_unearned_income"></div></td>
+				</tr>
+				<tr>
+					<td class="sumcell">Total Income (<i>TI</i>)</td>
+					<td class="sumcell"><div id="report_income"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<td class="calccell">Gross Income Limit (<i>GIL</i>)</td>
+					<td class="calccell"><div id="report_gross_income_limit"></div> <div id="report_gross_income_limit_reason"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr><td class="calccell">Categorically Eligible (<i>CE</i>)?</td>
+					<td class="calccell"><div id="report_cat_eligible"></div> <div id="report_cat_eligible_reason"></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<th colspan="2">Deductions</th>
+				</tr>
+				<tr>
+					<td class="calccell">Standard Deduction</td>
+					<td class="calccell"><div id="report_std_deduction"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Earned Income Deduction</td>
+					<td class="calccell"><div id="report_inc_deduction"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Medical Deduction</td>
+					<td class="calccell"><div id="report_med_deduction"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Adj Dependent Care</td>
+					<td class="calccell"><div id="report_dep_care"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Adj Child Support</td>
+					<td class="calccell"><div id="report_child_support"></div></td>
+				</tr>
+				<tr>
+					<td class="sumcell">Total Deductions (<i>TD</i>)</td>
+					<td class="sumcell"><div id="report_total_deductions"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				
+				<tr>
+					<td class="calccell">Prelim Adj Income (<i>TI - TD</i>)</td>
+					<td class="calccell"><div id="report_prelim_adj_inc"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<th colspan="2">Shelter</th>
+				</tr>
+				<tr>
+					<td class="calccell">Shelter Cost</td>
+					<td class="calccell"><div id="report_shelter"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">+ Utility Allowance</td>
+					<td class="calccell"><div id="report_utility"></div></td>
+				</tr>
+				<tr>
+					<td class="sumcell">Total Shelter (<i>TS</i>)</td>
+					<td class="sumcell"><div id="report_total_shelter"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<td class="calccell">50% Prelim Adj Income  (<i>PAI50</i>)</td>
+					<td class="calccell"><div id="report_adj_gi_50p"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Shelter Excess (<i>TS - PAI50</i>)</td>
+					<td class="calccell"><div id="report_shelter_excess"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Shelter Deduction (<i>SD</i>)</td>
+					<td class="calccell"><div id="report_shelter_deduction"></div></td>
+				</tr>
+				<tr><td colspan="2"> </td></tr>
+				<tr>
+					<th colspan="2">Benefits</th>
+				</tr>
+				<tr>
+					<td class="calccell">Net Income (<i>NI = TI - TD - SD</i>)</td>
+					<td class="calccell"><div id="report_net_income"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Net Income Limit (<i>NIL</i>)</td>
+					<td class="calccell"><div id="report_income_limit"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Net Income Test (<i>NIT</i>)</td>
+					<td class="calccell"><div id="report_net_income_test"></div> <div id="report_net_income_test_reason"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Max benefit for this household size (<i>MB</i>)</td>
+					<td class="calccell"><div id="report_max_benefit_size"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">30% Net Income (<i>NI30</i>)</td>
+					<td class="calccell"><div id="report_net_income_30p"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Expected Benefit</td>
+					<td class="calccell"><div id="report_exp_benefit"></div></td>
+				</tr>
+				<tr>
+					<td class="calccell">Benefit Reason</td>
+					<td class="calccell"><div id="report_exp_benefit_reason"></div></td>
+				</tr>
+				
+				</table>
+				</p>
+				
+					
+			</div>
+			
+		</td>
+	</tr>
+</table>
+</form>
+</div>
+</div>
+
+<p></p>
+<div id="footer"> </div>
+</div>
+</div>
+<p>Website development donated by <span><a href="http://www.alternateallele.com" target="_blank">Alternate Allele Consulting</a></span> and <span><a href="http://www.5amsolutions.com" target="_blank">5AM Solutions</a></span></p>
+<p>Calculator using data version: <span id="data_version"/></p>
+</body>
+
+</html>
