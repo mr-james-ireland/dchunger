@@ -354,8 +354,10 @@ update_total_gross_income = function() {
         case "two_utilities": utility_allowance = UTILITY_TWO_UTILITIES; break;
         case "one_utility": utility_allowance = UTILITY_ONE_UTILITY; break;
         case "phone": utility_allowance = UTILITY_PHONE; break;
-		default: utility_allowance = UTILITY_NO_UTILITIES;
+		case "none": utility_allowance = 0; break;
+		default: utility_allowance = UTILITY_NO_UTILITIES; // not used?
     }
+	
     $('#report_utility').text(Math.round(utility_allowance));    
     $('#report_total_shelter').text(Math.round(utility_allowance + total_shelter));
      
