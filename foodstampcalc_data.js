@@ -1,5 +1,5 @@
 // Data version - update with each change!  This will be displayed at the bottom of the page.
-var CALC_DATA_VERSION = "2024.12.29 V2.12"; // 
+var CALC_DATA_VERSION = "2024.12.29 V2.13"; // 
 
 // DC Hunger home page
 var DC_HUNGER_URL = "http://dchunger.org";
