@@ -402,13 +402,13 @@ update_total_gross_income = function() {
     $('#report_income_limit').text(net_income_limit);    
     
  
-    // CALC:  NET INCOME TEST - IF SSI BENFITS OR INCOME < INCOME LIMIT THENN PASS
+    // CALC:  NET INCOME TEST - IF CE OR INCOME < INCOME LIMIT THEN PASS
     //        OTHERWISE FAIL
     var net_income_test = "";
-    if (ssi_benefits == 'Y' || net_income <= net_income_limit) {
+    if (categorically_eligible == 'Yes' || net_income <= net_income_limit) {
         net_income_test = 'PASS';
-        if (ssi_benefits == 'Y') {
-            $('#report_net_income_test_reason').text('(receives SSI)');            	
+        if (categorically_eligible == 'Yes') {
+            $('#report_net_income_test_reason').text('(Categorically Eligible)');            	
         }
         else {
             $('#report_net_income_test_reason').text('(NI <= NIL)');    
@@ -590,4 +590,3 @@ $(document).ready(function(){
 	$("#data_version").text(CALC_DATA_VERSION);
 	
 });
-
